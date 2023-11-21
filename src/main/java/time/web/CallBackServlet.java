@@ -40,13 +40,14 @@ public class CallBackServlet extends TopServlet {
 		System.err.println(" Error : "+value);		
 	    }
 	}
+	System.err.println(" in callback ");
 	if(!error_flag){
 	    String code = request.getParameter("code");
 	    String state = request.getParameter("state");
 	    String original_state = (String)request.getSession().getAttribute("state");
-	    System.err.println(" state "+state);
-	    System.err.println(" code "+code);	
-	    if(state == null || !original_state.equals(state)){
+	    if(state == null ||
+	       original_state == null ||
+	       !original_state.equals(state)){
 		System.err.println(" invalid state "+state);
 		error_flag = true;
 		// 

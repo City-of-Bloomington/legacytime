@@ -13,7 +13,10 @@ import time.model.*;
 import time.list.*;
 import time.utils.*;
 
-@WebServlet(urlPatterns = {"/Login"})
+//
+// change to Login for use with CAS
+//
+@WebServlet(urlPatterns = {"/CasLogin"})
 public class Login extends TopServlet{
 
     //
